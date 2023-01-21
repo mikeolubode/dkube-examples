@@ -1,4 +1,74 @@
-## Download pipeline to Jupyterlab
+# Clinical Regression Example
+ 
+ This example takes clinical data, RNA data, and images as inputs and uses regression to train a model that will predict how long the person is expected take to recover.  The training flow is:
+
+ - Preprocess the clinical data and images
+ - Split the training data into training, validation, and test datasets
+ - Train the model
+ - Deploy the model
+ - Test the model with a WebApp
+
+ This example provides an fully automated way to train and deploy the model, and a manual approach that highlights the DKube UI.
+
+## Automated Setup and Execution using Kubeflow Pipelines
+
+ The clinical regression can be run in an automated manner through a Kubeflow Pipeline. This section explains how to execute this.
+
+### Create Code Repo
+
+ - Navigate to `Code` menu on the left side of the screen
+ - Select `+ Code`
+   - **Name:** `<your-code-repo>`  **(Your choice of name)**
+   - **Code Source:** `Git`
+   - **URL:** `https://github.com/oneconvergence/dkube-examples.git`
+   - **Branch:** `tensorflow`
+   - Leave the other fields in their current selection and `Submit`
+
+### Create JupyterLab IDE
+
+ - Navigate to `IDEs` menu on the left
+ - Select `+ JupyterLab`
+   - **Name:** `<your-ide-name>`  (Your choice of name)**
+   - **Code:** Select *\<your-code-repo\>*  **(From the Code Repo selection step)**
+   - **Framework:** `Tensorflow`
+   - **Framework Version:** `2.3.0`
+   - Leave the other fields in their current selection and `Submit`
+
+### Create Pipeline tar File
+
+ - Navigate to `IDEs` menu on the left
+ - When the JupyterLab instance is running, select the icon on the right to open a new JL tab
+ - Navigate to <code>workspace/**\<your-code-repo\>**/clinical_reg</code>
+ - Open `pipeline.ipynm`
+ - Select `Run` menu at the top and Select `Run All Cells` <br><br>
+ - This will create the Kubeflow Pipeline to:
+   - Create the datasets
+   - Proprocess the data
+   - Split them in to train, validate, & test
+   - Train the model
+   - Deploy the model
+   - Start the inference WebApp <br><br>
+ - Download the tar file that was just created onto your local system
+
+### Upload and Execute the Pipeline
+
+ - Navigate to `Pipelines` menu
+ - Select `+ Upload Pipeline`
+ - **Pipeline Description:** Your choice of description
+ - Select `Upload a File`
+ - Choose the file that you downloaded in the previous step
+ - Select `Create` <br><Br>
+ - Return to main `Pipelines` menu
+ - Select `Experiments` tab
+ - Select `+ Create Experiment`
+   - **Experiment Name:** Your choice of name
+   - Select `Next` <br><br>
+ - The Pipeline Run screen will appear
+   -  **Run Name:** Your choice of name
+   
+
+### Download pipeline to Jupyterlab
+
 1. Start any of the jupyterlab notebook from the IDE tab.
 2. Once running, click the jupyterlab icon to launch jupyterlab
 3. Open terminal in Jupyterlab and run
