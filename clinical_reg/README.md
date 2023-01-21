@@ -28,7 +28,7 @@
 
  - Navigate to `IDEs` menu on the left
  - Select `+ JupyterLab`
-   - **Name:** `<your-ide-name>`  (Your choice of name)**
+   - **Name:** `<your-ide-name>`  **(Your choice of name)**
    - **Code:** Select *\<your-code-repo\>*  **(From the Code Repo selection step)**
    - **Framework:** `Tensorflow`
    - **Framework Version:** `2.3.0`
@@ -50,7 +50,7 @@
    - Start the inference WebApp <br><br>
  - Download the tar file that was just created onto your local system
 
-### Upload and Execute the Pipeline
+### Upload Pipeline to DKube
 
  - Navigate to `Pipelines` menu
  - Select `+ Upload Pipeline`
@@ -58,14 +58,28 @@
  - Select `Upload a File`
  - Choose the file that you downloaded in the previous step
  - Select `Create` <br><Br>
+
+### Create Experiment (Optional)
+
+ A Kubeflow Pipeline must run within an Experiment.  If you already have an Experiment for the pipeline runs, skip this step and go to the next section on creating a pipeline run.  If you do not have an Experiment, this section explains how to create one.
+
  - Return to main `Pipelines` menu
  - Select `Experiments` tab
  - Select `+ Create Experiment`
    - **Experiment Name:** Your choice of name
    - Select `Next` <br><br>
- - The Pipeline Run screen will appear
-   -  **Run Name:** Your choice of name
-   
+ - Go back to the main `Pipelines` menu
+
+### Create and Execute Pipeline Run
+
+ - Navigate to the main `Pipelines` menu
+ - Select the pipeline that you just uploaded
+ - Select `+ Create run`
+   - The top names will be prepopulates
+   - Choose your Experiment from the dropdown
+   - **user:** `Your username`
+   - **auth_token:** Authentication token from the `Developer Settings` menu at the top right of the screen
+   - `Start` the pipeline
 
 ### Download pipeline to Jupyterlab
 
