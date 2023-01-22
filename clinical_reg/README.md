@@ -16,6 +16,8 @@
 
 ### Create Code Repo
 
+ The Code Repo contains the program code and other associated files for developing and running your model training.
+
  - Navigate to `Code` menu on the left side of the screen
  - Select `+ Code`
    - **Name:** `<your-code-repo>`  **(Your choice of name)**
@@ -26,6 +28,8 @@
 
 ### Create JupyterLab IDE
 
+ A JupterLab IDE is used to create the pipeline that trains the model.
+
  - Navigate to `IDEs` menu on the left
  - Select `+ JupyterLab`
    - **Name:** `<your-ide-name>`  **(Your choice of name)**
@@ -34,7 +38,9 @@
    - **Framework Version:** `2.3.0`
    - Leave the other fields in their current selection and `Submit`
 
-### Create Pipeline tar File
+### Create & Run Pipeline
+
+ A JupyterLab script is used to create the training pipeline.
 
  - Navigate to `IDEs` menu on the left
  - When the JupyterLab instance is running, select the icon on the right to open a new JL tab
@@ -48,16 +54,31 @@
    - Train the model
    - Deploy the model
    - Start the inference WebApp <br><br>
- - Download the tar file that was just created onto your local system
+ - The pipeline will be automatically created within DKube, and a pipeline run will be started <br><br>
+ - Navigate to `Pipelines` menu to view the pipeline graph and track the progress
+ - Select `Runs` tab on the top
+ - Your new pipeline run will be the first entry
+ - Select `View Pipeline` on the Run row to see the entire pipeline
+ - Use the backarrow to view the list of pipelines again
+ - Select the pipeline name to view the pipeline progress
 
+### View Resources Created by Pipeline
+
+ After the pipeline has completed its execution, you can view the Runs, Datasets, and Models created.
+
+ 
+
+<!---
 ### Upload Pipeline to DKube
+
+ Before execution, the pipeline needs to be uploaded to DKube.
 
  - Navigate to `Pipelines` menu
  - Select `+ Upload Pipeline`
  - **Pipeline Description:** Your choice of description
  - Select `Upload a File`
  - Choose the file that you downloaded in the previous step
- - Select `Create` <br><Br>
+ - Select `Create`
 
 ### Create Experiment (Optional)
 
@@ -80,7 +101,9 @@
    - **user:** `Your username`
    - **auth_token:** Authentication token from the `Developer Settings` menu at the top right of the screen
    - `Start` the pipeline
+-->
 
+<!---
 ### Download pipeline to Jupyterlab
 
 1. Start any of the jupyterlab notebook from the IDE tab.
@@ -102,6 +125,7 @@
    -  Transformer script: `clinical_reg/transformer.py`
 -  Deploy using: CPU and Submit. 
 -  Deployed Model will be available in Model Serving.
+-->
 
 ## Test Inference.
 
