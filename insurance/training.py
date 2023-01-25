@@ -59,7 +59,7 @@ if MLFLOW_EXPERIMENT_NAME:
 
 
 
-data = pd.read_csv(INPUT_DATA_URL)
+data = pd.read_csv('/input/dataset/insurance.csv')
 insurance_input = data.drop(['charges','timestamp','unique_id'],axis=1)
 insurance_target = data['charges']
     
