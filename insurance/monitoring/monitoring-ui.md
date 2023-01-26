@@ -169,8 +169,8 @@
    - **Alert Type:** `Data Drift`
    - **Configure based on:** `Threshold`
    - **Select Feature:** `age`
-   - **Operator:** `<`  **(less than)**
-   - **Threshold:** `0.2`
+   - **Operator:** `>`  **(greater than)**
+   - **Threshold:** `0.02`
  - Leave the other fields in their current selection
  - Select `Submit` button on the bottom right
  - This will show that the Alert has been set
@@ -184,7 +184,7 @@
    - **Alert Name:** `mae_alert`
    - **Alert Type:** `Performance Decay`
    - **Configure based on:** `Threshold`
-   - **Select Feature:** `age`
+   - **Select Metric:** `mae`
    - **Operator:** `>`  **(greater than)**
    - **Threshold:** `2000`
  - Leave the other fields in their current selection
@@ -202,6 +202,8 @@
    - [thresholds.json](https://raw.githubusercontent.com/oneconvergence/dkube-examples/training/insurance/monitoring/thresholds.json)
  
   > **Note** If you cannot directly paste in the link address, select the link by right-clicking it, select `Raw` on the right of the screen, save the file by right-clicking the screen and using `Save As...` to save the file.  Then use your new file to upload.
+ 
+ > **Note** The Thresholds File does not set any alerts. It is only used for the visual indications (green, yellow, red) on the UI. One can set alerts later either based on these thresholds or completely new thresholds.
 
 ## Start Monitor
  
