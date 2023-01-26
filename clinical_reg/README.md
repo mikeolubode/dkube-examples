@@ -35,7 +35,8 @@
    - **Name:** `<your-ide-name>`  **(Your choice of name)**
    - **Code:** Select *\<your-code-repo\>*  **(From the Code Repo selection step)**
    - **Framework:** `Tensorflow`
-   - **Framework Version:** `2.3.0`
+   - **Framework Version:** `2.0.0`
+   - **Image:** `ocdr/dkube-datascience-tf-cpu-multiuser:v2.0.0-17`
    - Leave the other fields in their current selection and `Submit`
 
 ### Create & Run Pipeline
