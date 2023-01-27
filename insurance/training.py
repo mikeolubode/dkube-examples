@@ -37,6 +37,7 @@ LEARNING_RATE = args.learning_rate
 # Define data
 INPUT_DATA_URL = os.getenv("DATASET_URL", "https://dkube-examples-data.s3.us-west-2.amazonaws.com/monitoring-insurance/training-data/insurance.csv")
 
+DATASET_INPUT_DIR = "/input/dataset"
 
 # Keep track of models.
 OUTPUT_MODEL_DIR = os.getcwd()+"/model"
@@ -58,7 +59,7 @@ if MLFLOW_EXPERIMENT_NAME:
 
 
 
-data = pd.read_csv('/input/dataset/insurance.csv')
+data = pd.read_csv(DATASET_INPUT_DIR + 'insurance.csv')
 insurance_input = data.drop(['charges','timestamp','unique_id'],axis=1)
 insurance_target = data['charges']
     
